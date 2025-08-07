@@ -1,17 +1,34 @@
+#include <stdio.h>
 int main() {
-int i, j, isPrime, sum = 0;
-for (i = 2; i <= 100; i++) {
-isPrime = 1; // Assume i is prime
-for (j = 2; j <= i / 2; j++) {
-if (i % j == 0) {
-isPrime = 0; // i is divisible by j, not prime
+int choice;
+float radius, length, breadth, area;
+
+10
+
+printf("Choose shape to calculate area:\n");
+printf("1. Circle\n2. Rectangle\n3. Square\n");
+scanf("%d", &choice);
+switch (choice) {
+case 1:
+printf("Enter radius: ");
+scanf("%f", &radius);
+area = 3.1416 * radius * radius;
+printf("Area of Circle: %.2f\n", area);
 break;
+case 2:
+printf("Enter length and breadth: ");
+scanf("%f %f", &length, &breadth);
+area = length * breadth;
+printf("Area of Rectangle: %.2f\n", area);
+break;
+case 3:
+printf("Enter side length: ");
+scanf("%f", &length);
+area = length * length;
+printf("Area of Square: %.2f\n", area);
+break;
+default:
+printf("Invalid choice!\n");
 }
-}
-if (isPrime) {
-sum += i;
-}
-}
-printf("Sum of all prime numbers between 1 and 100 is: %d\n", sum);
 return 0;
 }
